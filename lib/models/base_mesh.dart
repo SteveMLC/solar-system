@@ -41,6 +41,16 @@ class BaseMesh extends Equatable {
 
   ///
   Object3D rotateObject3D(double value) => object3d.rotateY(value);
+  
+  ///
+  Vector3 get currentPosition => mesh.position;
+  
+  ///
+  Vector3 get currentWorldPosition {
+    final worldPosition = Vector3();
+    mesh.getWorldPosition(worldPosition);
+    return worldPosition;
+  }
 
   ///
   @override
